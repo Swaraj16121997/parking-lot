@@ -1,0 +1,16 @@
+create models:
+    - create base class for all models
+    - create all the entities/models based on the class diagrams
+
+Controllers:
+    - Generating the ticket is the primary step in the process of parking, hence we'll start with the ticket model's controller
+    - For generating a ticket we need Vehicle, Entry time, Operator, Gate. But does client needs to provide all this to us?
+      No. If client provides us with just the vehicle number and the gate number we can fetch details related to it from the database.
+      Problems with directly involving Models in the Controller API's :-
+        1. If we add/remove models from the input, current clients will start failing.
+        2. We should not expose the Model details to client because of privacy.
+      Now's where the concept of DTO comes into picture. DTO is a data transfer object which is used to transfer data from client to underlying systems.
+      It is a wrapper for the data on which we will work in the backend but ask for only those data to our client of which he has knowledge about.
+
+Services:
+    - We'll create a service for generate ticket controller.
