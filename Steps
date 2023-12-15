@@ -13,4 +13,13 @@ Controllers:
       It is a wrapper for the data on which we will work in the backend but ask for only those data to our client of which he has knowledge about.
 
 Services:
-    - We'll create a service for generate ticket controller.
+    - We'll create a service for ticket generation in the controller.
+        Create skeleton/Flow in the service then implement it:
+            1. Get vehicle from DB using vehicleNumber, if Vehicle is not found, register vehicle in the DB.
+            2. Assign a parking spot to the vehicle
+            3. Update status of the parking spot
+            4. Create a ticket
+            5. Save ticket in the DB
+
+    - Always remember: controller (waiter) -> service (chef) -> repository (kitchen) -> DB(food)
+    - Implement the concept of object containers (spring internally uses this concept)
