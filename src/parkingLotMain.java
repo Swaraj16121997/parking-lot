@@ -25,5 +25,7 @@ public class parkingLotMain {
 
         TicketController ticketController = new TicketController((TicketService) objectContainer.getObject("ticketService"));
         objectContainer.addObject("ticketController", ticketController);
+
+        // TODO: complete generate ticket and implement generate bill
     }
 }
