@@ -21,8 +21,9 @@ public class parkingLotMain {
         objectContainer.addObject("ticketRepository", ticketRepository);
 
         TicketService ticketService = new TicketService((TicketRepository) objectContainer.getObject("ticketRepository"));
+        objectContainer.addObject("ticketService", ticketService);
 
-        TicketController ticketController =
-                new TicketController((TicketService) objectContainer.getObject("ticketService"));
+        TicketController ticketController = new TicketController((TicketService) objectContainer.getObject("ticketService"));
+        objectContainer.addObject("ticketController", ticketController);
     }
 }
